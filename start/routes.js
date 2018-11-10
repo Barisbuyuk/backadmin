@@ -19,3 +19,10 @@ const Route = use('Route')
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
+
+Route.get('/currency/:page/:rows/:order?/:direction?', 'CurrencyController.index')
+Route.post('/currency/bulkDelete', 'CurrencyController.bulkDelete')
+Route.delete('/currency/:id', 'CurrencyController.delete')
+Route.post('/currency', 'CurrencyController.store')
+Route.put('/currency', 'CurrencyController.update')
+Route.post('/currency/truncate', 'CurrencyController.truncate')
